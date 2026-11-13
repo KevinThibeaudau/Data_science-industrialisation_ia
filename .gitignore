@@ -1,0 +1,23 @@
+
+# Donnees d'apprentissage et de test
+data/
+
+# Modeles entraines
+artifacts/
+
+# Resultats des experiences
+resultats_frequence_v2/
+
+# Environnement virtuel Python
+.venv/
+venv/
+
+# Fichiers temporaires Python
+__pycache__/
+*.pyc
+
+# Cache des tests
+.pytest_cache/
+
+# Fichiers de configuration locaux
+.env
