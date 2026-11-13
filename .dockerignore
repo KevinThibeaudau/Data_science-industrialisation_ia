@@ -1,0 +1,11 @@
+
+.git/
+.github/
+.venv/
+data/
+monitoring_data/
+notebooks/
+tests/
+.pytest_cache/
+__pycache__/
+*.pyc
