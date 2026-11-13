@@ -21,3 +21,6 @@ __pycache__/
 
 # Fichiers de configuration locaux
 .env
+
+# Historique des contrats envoyés en prédiction
+monitoring_data/
