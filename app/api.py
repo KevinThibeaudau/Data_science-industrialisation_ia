@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 from frequence.predict import predict_frequency
 
-
 app = FastAPI(
     title="Tarification automobile",
     description="API de prédiction des sinistres automobiles",
