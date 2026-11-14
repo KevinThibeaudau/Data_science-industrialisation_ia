@@ -1,13 +1,13 @@
 
-import re
 
+from pathlib import Path
+
+import pytest
 from fastapi.testclient import TestClient
 
-from app.api import app
-from pathlib import Path
-import pytest
-
 from app import api as api_module
+from app.api import app
+
 client = TestClient(app)
 
 CONTRAT_VALIDE = {
