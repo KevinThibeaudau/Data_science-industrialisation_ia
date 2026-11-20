@@ -24,3 +24,19 @@ __pycache__/
 
 # Historique des contrats envoyés en prédiction
 monitoring_data/
+
+
+# macOS
+.DS_Store
+CLAUDE.md
+
+# Office temporary lock files
+~$*
+
+# Generated outputs (sinister_amount)
+sinister_amount/*.csv
+sinister_amount/*.txt
+sinister_amount/*.pptx
+sinister_amount/resultats_rmse
+sinister_amount/rapport_exploration.html
+
