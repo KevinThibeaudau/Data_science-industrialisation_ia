@@ -2,6 +2,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+from claim_amount.predict import predict_claim_amount
 from frequence.predict import predict_frequency
 
 app = FastAPI(
@@ -52,6 +53,16 @@ class Contrat(BaseModel):
 class FrequenceResponse(BaseModel):
     frequency: float
 
+
+class ClaimAmountResponse(BaseModel):
+    claim_amount: float
+
+
+class PremiumResponse(BaseModel):
+    frequency: float
+    claim_amount: float
+    premium: float
+
 @app.get("/health")
 def health():
     """Vérifie que l'API répond."""
@@ -79,3 +90,50 @@ def prediction_frequence(contrat: Contrat):
         ) from erreur
 
     return {"frequency": probabilite}
+
+
+
+
+@app.post(
+    "/predict_claim_amount",
+    response_model=ClaimAmountResponse
+)
+def claim_amount_prediction(contract: Contrat):
+    """Predict the expected amount (in euros) of a claim."""
+
+    try:
+        amount = predict_claim_amount(contract.model_dump())
+
+    except (ValueError, TypeError) as error:
+        raise HTTPException(
+            status_code=422,
+            detail=str(error),
+        ) from error
+
+    return {"claim_amount": amount}
+
+
+@app.post(
+    "/predict_premium",
+    response_model=PremiumResponse
+)
+def premium_endpoint(contract: Contrat):
+    """Predict the pure premium: claim probability x expected claim amount."""
+
+    data = contract.model_dump()
+
+    try:
+        probability = predict_frequency(data)
+        amount = predict_claim_amount(data)
+
+    except (ValueError, TypeError) as error:
+        raise HTTPException(
+            status_code=422,
+            detail=str(error),
+        ) from error
+
+    return {
+        "frequency": probability,
+        "claim_amount": amount,
+        "premium": probability * amount,
+    }

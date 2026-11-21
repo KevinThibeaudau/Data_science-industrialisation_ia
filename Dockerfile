@@ -18,6 +18,7 @@ RUN uv sync --locked --no-dev --no-install-project --no-cache
 # Copier l'application et le modèle
 COPY app/ ./app/
 COPY frequence/ ./frequence/
+COPY claim_amount/ ./claim_amount/
 COPY artifacts/ ./artifacts/
 
 # Utiliser le Python de l'environnement virtuel créé par uv

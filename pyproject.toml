@@ -21,6 +21,9 @@ dependencies = [
 train = [
     "optuna==5.0.0",
 ]
+experiments = [
+    "matplotlib==3.10.8",
+]
 
 [dependency-groups]
 dev = [
@@ -31,3 +34,7 @@ dev = [
 
 [tool.uv]
 package = false
+
+[tool.ruff]
+# Research scripts, not part of the production code.
+extend-exclude = ["claim_amount/experiments"]
