@@ -33,10 +33,14 @@ CLAUDE.md
 # Office temporary lock files
 ~$*
 
-# Generated outputs (sinister_amount)
-sinister_amount/*.csv
-sinister_amount/*.txt
-sinister_amount/*.pptx
-sinister_amount/resultats_rmse
-sinister_amount/rapport_exploration.html
+# Generated outputs (claim_amount)
+claim_amount/**/*.csv
+claim_amount/**/*.txt
+claim_amount/**/*.pptx
+claim_amount/**/*.png
+claim_amount/**/resultats_rmse
+claim_amount/**/rapport_exploration.html
+
+# Old folder, kept locally until the presentation files are moved
+sinister_amount/
 

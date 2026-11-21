@@ -7,7 +7,7 @@ from scipy import stats
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OrdinalEncoder
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 
 CIBLE = "montant_sinistre"
 SEUIL_P = 0.20
