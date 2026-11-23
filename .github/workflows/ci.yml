@@ -31,7 +31,7 @@ jobs:
         run: uv sync --locked
 
       - name: Verifier la qualite du code
-        run: uv run --no-sync ruff check app/ tests/
+        run: uv run --no-sync ruff check app/ tests/ claim_amount/
 
       - name: Executer les tests
         run: uv run --no-sync python -m pytest -v tests/

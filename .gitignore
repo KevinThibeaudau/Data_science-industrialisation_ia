@@ -24,3 +24,23 @@ __pycache__/
 
 # Historique des contrats envoyés en prédiction
 monitoring_data/
+
+
+# macOS
+.DS_Store
+CLAUDE.md
+
+# Office temporary lock files
+~$*
+
+# Generated outputs (claim_amount)
+claim_amount/**/*.csv
+claim_amount/**/*.txt
+claim_amount/**/*.pptx
+claim_amount/**/*.png
+claim_amount/**/resultats_rmse
+claim_amount/**/rapport_exploration.html
+
+# Old folder, kept locally until the presentation files are moved
+sinister_amount/
+
